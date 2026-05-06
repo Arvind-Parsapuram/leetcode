@@ -9,12 +9,9 @@ class Solution {
             res.add(new ArrayList<>(current));
             return;
         }
-        if(target<0){
-            return;
-        }
 
         for(int i = start;i < candidates.length;i++ ){
-
+            if(candidates[i]> target) continue;
             current.add(candidates[i]);
 
             backtrack(i,candidates,target - candidates[i],current,res);//we can use same element many times
